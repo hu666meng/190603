@@ -1,0 +1,111 @@
+@charset "utf-8";
+
+html {
+    font-family: "微软雅黑", sans-serif, Arial;
+    font-size: 16px;
+}
+
+body, ul, ol, dl, li, td, th, button, input, optgroup, select, textarea, p, tr{
+    margin: 0;
+    padding: 0;
+}
+
+/*******************E 8/9/10/11里的button默认的overflow是hidden，这里设为和群众一致的visible*******************/
+button {
+    overflow: visible;
+}
+
+/***************************统一各浏览器text-transform不会继承的问题*************************/
+button, select {
+    text-transform: none;
+}
+
+/*********************重置按钮禁用时光标样式*********************/
+button, html, a {
+    cursor: pointer;
+}
+
+/* IE里的文本框就算文本高度没有超过指定高度，都会默认加上一个没有滚动条的滚动栏，设置overflow: auto可以去掉*/
+textarea {
+    overflow: auto;
+    resize: none;
+}
+
+/*************************************Tables*************************************/
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/***************去除 IE6-9 和 Firefox 3 中 a 内部 images 元素默认的边框******************/
+img {
+    border: 0;
+    vertical-align: top;
+}
+
+/************************************重置ul列表样式***************************************/
+ul, ol, dl, li {
+    list-style: none;
+}
+
+/*********************去掉 IE 10+ 点击链接时的灰色背景******************/
+a {
+    background-color: transparent;
+    text-decoration: none;
+}
+
+/***************去掉点击时的 outline 焦点框，同时保证使用键盘可以显示焦点框，这个操作针对所有浏览器***************/
+a:link, a:active, a:hover, a:visited {
+    outline: 0;
+}
+
+/***********修正所有浏览器中颜色不继承的问题,修正所有浏览器中字体不继承的问题,修正 Firefox 3+， Safari5 和 Chrome 中外边距不同的问题***********/
+button, input, optgroup, select, textarea {
+    color: inherit;
+    font: inherit;
+}
+
+/***************移除 Firefox 4+ 内部的内边距*************/
+button::-moz-focus-inner, input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+/**************修正 IE 8/9 box-sizing 被设置为content-box的问题,移除 IE 8/9 中多余的内边距**************/
+input[type="checkbox"], input[type="radio"] {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+/*修复 IE 8/9，HTML5新元素不能正确显示的问题，定义为 block 的元素,修复 IE 10/11， details 和 summary 定义为 block 的元素,修复 IE 11， main 定义为 block 的元素*/
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+    display: block;
+}
+
+/**修复 IE 8/9，HTML5新元素不能正确显示的问题，定义为 inline-block 元素,修复Chrome, Firefox, 和Opera的 progress 元素没有以baseline垂直对齐**/
+audio, canvas, progress, video {
+    display: inline-block;
+    vertical-align: baseline;
+}
+
+/************************修复 IE9/10/11 中的 overflow 的怪异表现*********************/
+svg:not(:root) {
+    overflow: hidden;
+}
+
+/* 修正 Safari 5 和 Chrome 中appearance被设置为searchfield的问题,修正 Safari 5 和 Chrome 中box-sizing被设置为border-box的问题*/
+input[type="search"] {
+    -webkit-appearance: textfield;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+/*******************移除原生默认样式，统一search的输入框样式***************/
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+
+
+

@@ -1,0 +1,139 @@
+@charset "utf-8";
+/*	1.设置全局的字体为sans-serif，关于中文字体的设置可参考 Amaze UI
+	2.防止 iOS 横屏字号放大，同时保证在PC上 zoom 功能正常
+	第2个问题场景是这样，苹果IOS设备调整后会自动调整文字的大小，按照苹果的意图是为了提升用户体验，比如竖屏状态下是 14px ，转换为横屏时就变成了 20px ，把 text-size-adjust:100% 就不会调整字体大小了。
+	如果把值设置为 'text-size-adjust:none' ，那么就会导致用户无法放大缩小字体了。*/
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+/************对不支持 controls 属性的浏览器， audio 元素给以隐藏,移除iOS5设备中多余的高度**********/
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+/**********修复 Firefox 4+，Safari 5 和 Chrome 中 section 和 article 内的 h1 字体大小*********/
+h1 {
+    font-size: 2em;
+    margin: 0;
+}
+
+/*在所有浏览器中统一 small 的字体大小,small 标签在 HTML 4.01 就已经存在，HTML5 中增强了它的寓意，表示旁注信息，不过此标签在各个浏览器中呈现的字体大小不一样，在这里做了统一*/
+small {
+    font-size: 80%;
+}
+
+/*防止所有浏览器中的 sub 和 sup 影响行高
+sup 和 sub 两个标签是用来表示上标和下标，据HTML标准中对 small ， sub 和 sup 的大小要求都是 smaller ，但是如上所示 normalize.css 给 small 设的是80%，而 sub 和 sup 却是75%，所以为了保持一致，且不影响其他元素的行高，把两者的 line-height 设为 0 ，然后设置它的垂直以baseline开始，设置 top 和 bottom 手动设置两者偏移量
+ */
+sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+/*避免 Android 4.0.* 中的 WebKit bug ，该bug会破坏原生的audio和video的控制器,更正 iOS 中无法设置可点击的input的问,统一其他类型的input的光标样式*/
+button, input[type="button"], input[type="reset"], input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: default;
+}
+
+input, button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+}
+html {
+    font-size: 20px;
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+@media only screen and (min-width: 320px) {
+    html {
+        font-size: 17px !important
+    }
+}
+
+@media only screen and (min-width: 328px) {
+    html {
+        font-size: 17.5px !important
+    }
+}
+
+@media only screen and (min-width: 337px) {
+    html {
+        font-size: 18px !important
+    }
+}
+
+@media only screen and (min-width: 346px) {
+    html {
+        font-size: 18.5px !important
+    }
+}
+
+@media only screen and (min-width: 356px) {
+    html {
+        font-size: 19px !important
+    }
+}
+
+@media only screen and (min-width: 365px) {
+    html {
+        font-size: 19.5px !important
+    }
+}
+
+@media only screen and (min-width: 400px) {
+    html {
+        font-size: 21.33px !important
+    }
+}
+
+@media only screen and (min-width: 414px) {
+    html {
+        font-size: 22.08px !important
+    }
+}
+
+@media only screen and (min-width: 480px) {
+    html {
+        font-size: 25.6px !important
+    }
+}
+
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
